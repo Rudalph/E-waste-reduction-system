@@ -1,0 +1,110 @@
+body {
+    background: rgb(240, 70, 252);
+background: radial-gradient(circle, rgb(200, 70, 252) 9%, rgb(121, 225, 246) 85%);
+}
+
+.cardpos__s {
+    
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+   
+}
+
+.cardsize__e {
+    padding: 100px;
+    
+    height: 650px;
+    width: 1300px;
+    background-color: rgb(245, 255, 255);
+    display: flex;
+    justify-content: center;
+    
+}
+
+.navsidetxt {
+    display: flex;
+    justify-content: space-between;
+}
+
+.incardtxt {
+    color: rgb(166, 0, 255);
+}
+
+.cardinsidediv {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+
+.but {
+    height: 70px;
+    width: 300px;
+    border-radius: 100px;
+    background-color: rgb(144, 76, 180);
+}
+
+
+.fade-in-text {
+    animation: fadeIn 10s;
+}
+
+@keyframes fadeIn {
+    0% { opacity: 0;
+    transform: translateX(20px);
+    }
+    100% {opacity: 1;
+    transform: translateX(0);
+    }
+}
+
+.fade-in-right {
+    animation: fadeInRight 8s;
+}
+
+@keyframes fadeInRight {
+    0% {opacity: 0;
+    transform: translateY(20px);
+   }
+
+   100% { opacity: 1;
+    transform: translateY(0);
+   }
+}
+
+.butani {
+    animation: but_ani 8s;
+}
+
+@keyframes but_ani {
+    0% {opacity: 0;
+    transform: translateX(20px);
+   }
+
+   100% { opacity: 1;
+    transform: translateX(0);
+   }
+}
+
+.figani {
+    animation: fig_ani 8s;
+}
+
+@keyframes fig_ani {
+    0% {opacity: 0;
+    transform: translateZ(20px);
+   }
+
+   50% {
+    opacity: 0.5;
+    transform: translateX(10px);
+   }
+
+   100% { opacity: 1;
+    transform: translateX(0);
+   }
+}
