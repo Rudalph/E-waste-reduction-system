@@ -15,7 +15,7 @@ import Spinner from '../components/Spinner'
 
 function CreateListing() {
   // eslint-disable-next-line
-  const [geolocationEnabled, setGeolocationEnabled] = useState(true)
+  //const [geolocationEnabled, setGeolocationEnabled] = useState(true)
   const [loading, setLoading] = useState(false)
   const [formData, setFormData] = useState({
     type: 'rent',
@@ -86,10 +86,10 @@ function CreateListing() {
       toast.error('Max 6 images')
       return
     }
-
+    /*
     let geolocation = {}
     let location
-
+    
     if (geolocationEnabled) {
       const response = await fetch(
         `https://maps.googleapis.com/maps/api/geocode/json?address=${address}&key=${process.env.REACT_APP_GEOCODE_API_KEY}`
@@ -114,6 +114,7 @@ function CreateListing() {
       geolocation.lat = latitude
       geolocation.lng = longitude
     }
+    */
 
     // Store image in firebase
     const storeImage = async (image) => {
@@ -121,7 +122,7 @@ function CreateListing() {
         const storage = getStorage()
         const fileName = `${auth.currentUser.uid}-${image.name}-${uuidv4()}`
 
-        const storageRef = ref(storage, 'images/' + fileName)
+        const storageRef = ref(storage, 'Listings/' + fileName)
 
         const uploadTask = uploadBytesResumable(storageRef, image)
 
@@ -167,7 +168,7 @@ function CreateListing() {
     const formDataCopy = {
       ...formData,
       imgUrls,
-      geolocation,
+      //geolocation,
       timestamp: serverTimestamp(),
     }
 
@@ -335,18 +336,22 @@ function CreateListing() {
               No
             </button>
           </div>
+          {/*
+            <label className='formLabel'>Address</label>
+            <textarea
+              className='formInputAddress'
+              type='text'
+              id='address'
+              value={address}
+              onChange={onMutate}
+              required
+            />
+            */
+          }
+          
 
-          <label className='formLabel'>Address</label>
-          <textarea
-            className='formInputAddress'
-            type='text'
-            id='address'
-            value={address}
-            onChange={onMutate}
-            required
-          />
-
-          {!geolocationEnabled && (
+          {/*
+          !geolocationEnabled && (
             <div className='formLatLng flex'>
               <div>
                 <label className='formLabel'>Latitude</label>
@@ -371,7 +376,7 @@ function CreateListing() {
                 />
               </div>
             </div>
-          )}
+          )*/}
 
           <label className='formLabel'>Offer</label>
           <div className='formButtons'>
