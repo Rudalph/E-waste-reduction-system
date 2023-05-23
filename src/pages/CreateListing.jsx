@@ -122,7 +122,7 @@ function CreateListing() {
         const storage = getStorage()
         const fileName = `${auth.currentUser.uid}-${image.name}-${uuidv4()}`
 
-        const storageRef = ref(storage, 'Listings/' + fileName)
+        const storageRef = ref(storage, 'listings/' + fileName)
 
         const uploadTask = uploadBytesResumable(storageRef, image)
 
